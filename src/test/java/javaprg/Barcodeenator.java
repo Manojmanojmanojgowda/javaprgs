@@ -1,12 +1,8 @@
 package javaprg;
-
-
 	import java.awt.image.BufferedImage;
 	import java.io.File;
-	import java.io.IOException;
 	import javax.imageio.ImageIO;
 	import com.google.zxing.BarcodeFormat;
-	import com.google.zxing.EncodeHintType;
 	import com.google.zxing.MultiFormatWriter;
 	import com.google.zxing.common.BitMatrix;
 
@@ -26,7 +22,6 @@ package javaprg;
 	                // Encoding hints can be specified here, but are optional
 	                null
 	            );
-
 	            // Convert the BitMatrix to a BufferedImage
 	            BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 	            for (int x = 0; x < width; x++) {
@@ -34,7 +29,6 @@ package javaprg;
 	                    image.setRGB(x, y, bitMatrix.get(x, y) ? 0xFF000000 : 0xFFFFFFFF);
 	                }
 	            }
-
 	            // Save the image to a file
 	            File outputFile = new File(filePath);
 	            ImageIO.write(image, "png", outputFile);
